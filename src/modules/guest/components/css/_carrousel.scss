@@ -1,0 +1,51 @@
+.carrousel {
+    position: relative;
+    max-width: 100%;
+    height: 600px;
+    background: red;
+}
+
+.banner{
+    height: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+        }
+}
+
+.note__banner{
+    position: absolute;
+    width: 30%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
+    background: rgba(255, 255, 255, 0.90);
+}
+
+.content__note{
+    height: auto;
+    padding: 10% 12%;
+    
+    p {
+        font-size: 90%;
+        color: $basicColor;
+        text-transform: uppercase;
+        letter-spacing: 1pt;
+        word-spacing: 1.67rem;
+        line-height: 1.5rem;
+        text-align: justify;
+    }
+    h2 {
+        padding: 5% 0px;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        line-height: 40pt;
+        letter-spacing: 1pt;
+    }
+
+    .links__note{
+        display: inline-block;
+        padding: 3% 0px;
+    }
+    
+}

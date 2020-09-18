@@ -1,0 +1,59 @@
+@import 'general';
+@import 'variables';
+@import 'header';
+@import 'carrousel';
+@import 'about';
+@import 'services';
+@import 'projects';
+@import 'contact';
+@import 'footer';
+@import 'mixins';
+
+
+.title{
+    position: relative;
+    padding: 15px 0px;
+    margin: 15px 0px;
+    font-size: 2.1rem;
+    letter-spacing: 0.2rem;
+    line-height: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    &:after{
+        position: absolute;
+        content:"";
+        width: 120px;
+        height: 5px;
+        background-color: $secondaryColor;
+        left: 0px;
+        bottom: -5px;
+    }
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        text-decoration: none;
+        color: $secondaryColor;
+    }
+}
+
+.btn__main{
+   @include button(black, transparent, black);
+   &:hover{
+    @include buttonHover(black, black, white);
+   }
+}
+
+.btn__secondary{
+    @include button($secondaryColor, $secondaryColor, white);
+    &:hover{
+        @include buttonHover(black ,black, white);
+    }
+}
+
+textarea {
+    padding: 15px;
+    border: 1px solid $lightColor;
+}

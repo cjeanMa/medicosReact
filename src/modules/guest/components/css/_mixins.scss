@@ -1,0 +1,20 @@
+/* Funcion para dar formato a botones en cuanto a  borde, background y color de texto*/
+@mixin button($border, $bg, $tc){
+    border: 1px solid $border;
+    border-radius: 3px;
+    padding: 15px 10px;
+    text-transform: uppercase;
+    background-color: $bg;
+    color: $tc;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1pt;
+    transform: 0.5s;
+}
+
+/* Funcion para cuando el cursor este encima de un boton,color de borde, necesita background y color de texto */
+@mixin buttonHover($border,$bc, $tc){
+    background-color: $bc;
+    color: $tc;
+    border: 1px solid $border;
+}

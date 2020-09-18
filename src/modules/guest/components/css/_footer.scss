@@ -1,0 +1,39 @@
+.foot {
+    letter-spacing: 0.1rem;
+}
+
+.info-footer {
+    img {
+        width: 100%;
+    }
+}
+
+.enlaces-footer {
+    ul {
+        padding: 0px;
+        list-style-type: none;
+        li {
+            margin-left: 40px;
+            position: relative;
+            .link-footer {
+                color: white;
+                text-decoration: none;
+            }
+            &:before {
+                position: absolute;
+                content: "\1F538";
+                left: -35px;
+                transition: 1s;
+            }
+            &:hover{
+                a{
+                    color: $lightColor;
+                }
+                &:before{
+                    left: -25px;
+                }
+            }
+        }
+    }
+}
+
