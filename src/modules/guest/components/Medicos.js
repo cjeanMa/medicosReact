@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import CardMedico from './CardMedico';
 import Especialidades from './Especialidades';
-import {getEspecialidades} from '../../../services/Especialidades';
-import {getMedicos} from '../../../services/Medicos';
-import {getDistritos} from '../../../services/Distritos';
+import { getEspecialidades } from '../../../services/Especialidades';
+import { getMedicos } from '../../../services/Medicos';
+import { getDistritos } from '../../../services/Distritos';
 import Distritos from './Distritos';
 
 const Medicos = () => {
@@ -17,15 +17,15 @@ const Medicos = () => {
 
     useEffect(() => {
         //setMedicos(allData);
-        getMedicos().then((rpta)=>{
+        getMedicos().then((rpta) => {
             setDataMedicos(rpta);
         })
 
-        getEspecialidades().then((rpta)=>{
+        getEspecialidades().then((rpta) => {
             setDataEspecialidades(rpta);
         })
 
-        getDistritos().then(rpta=>{
+        getDistritos().then(rpta => {
             setDataDistritos(rpta)
         })
     }
@@ -34,24 +34,51 @@ const Medicos = () => {
     useEffect(() => {
         filtroMedicos();
     }
-        , [especialidad]);
+        , [especialidad, distrito]);
+
+
+    const filtroEspecialidades = (data) => {
+        let espFiltrado = data.filter((medico) => {
+            if (medico.especialidad == especialidad)
+                return medico;
+        })
+        return espFiltrado;
+        //setMedicos([...dataFiltrada]);
+    };
+
+    const filtroDistritos = (data) => {
+        let disFiltrado = data.filter((medico) => {
+            if (medico.distrito == distrito)
+                return medico;
+        })
+        return disFiltrado;
+    };
+
 
     /* Funcion para filtrar por especialidad */
     const filtroMedicos = () => {
-        if (especialidad != "") {
-            let dataFiltrada = dataMedicos.filter((medico) => {
-                if (medico.especialidad == especialidad)
-                    return medico;
-            })
-            setMedicos([...dataFiltrada]);
+        if (especialidad != "" || distrito != "") {
+            if (distrito != "") {
+                let filtro = filtroDistritos(dataMedicos);
+                setMedicos([...filtro]);
+                if (especialidad != "") {
+                    let filtro2 = filtroEspecialidades(filtro);
+                    setMedicos([...filtro2]);
+                }
+            }
+            else if (especialidad != "") {
+                let filtro = filtroEspecialidades(dataMedicos);
+                setMedicos([...filtro]);
+            }
         }
         else {
-            getMedicos().then((rpta)=>{
+            getMedicos().then((rpta) => {
                 setMedicos(rpta);
             })
         }
-
     }
+
+
     return (
         <>
             <div className="container">
@@ -69,15 +96,13 @@ const Medicos = () => {
                 </Distritos>
                 <div className="row justify-content-center py-4">
                     {medicos.map((medico) => {
-                        //let indexEsp = dataEspecialidades.find(esp => esp.id === medico.especialidad);
-                        //let indexEsp = 1;
                         return (
                             <CardMedico
                                 key={medico.id}
                                 medico={medico}
-                                esp={dataEspecialidades} 
-                                distritos = {dataDistritos}
-                                />
+                                esp={dataEspecialidades}
+                                distritos={dataDistritos}
+                            />
                         )
                     })}
                 </div>
