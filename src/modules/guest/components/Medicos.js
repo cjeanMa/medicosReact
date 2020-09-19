@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react'
 import CardMedico from './CardMedico';
 import Especialidades from './Especialidades';
+import {getEspecialidades} from '../../../services/Especialidades';
+import {getMedicos} from '../../../services/Medicos';
+import {getDistritos} from '../../../services/Distritos';
+import Distritos from './Distritos';
 
 const Medicos = () => {
 
     const [especialidad, setEspecialidad] = useState("");
+    const [distrito, setDistrito] = useState("");
     const [dataMedicos, setDataMedicos] = useState([]);
     const [medicos, setMedicos] = useState([]);
-    const allData = [
-        { nombre: "Dr. Juan Perez", especialidad: 1, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Rosa Pereira", especialidad: 2, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Jose Perez", especialidad: 2, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Richard Garcia", especialidad: 3, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Lorena Ramos", especialidad: 3, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Julian Castro", especialidad: 1, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Ramon Valdez", especialidad: 2, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-        { nombre: "Dr. Liliana Perez", especialidad: 1, imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRRax5Ud9e2gqIl3CeCYunrrNQVWfbvlcqpNQ&usqp=CAU", lugar: "Av. Larco 123" },
-    ]
-
-    const dataEspecialidades = [
-        { id: 1, nombre: "Cardiólogo" },
-        { id: 2, nombre: "Neurólogo" },
-        { id: 3, nombre: "Pediatra" }];
+    const [dataEspecialidades, setDataEspecialidades] = useState([]);
+    const [dataDistritos, setDataDistritos] = useState([]);
 
     useEffect(() => {
         //setMedicos(allData);
-        setDataMedicos(allData);
+        getMedicos().then((rpta)=>{
+            setDataMedicos(rpta);
+        })
+
+        getEspecialidades().then((rpta)=>{
+            setDataEspecialidades(rpta);
+        })
+
+        getDistritos().then(rpta=>{
+            setDataDistritos(rpta)
+        })
     }
         , []);
 
@@ -43,30 +45,39 @@ const Medicos = () => {
             })
             setMedicos([...dataFiltrada]);
         }
-        else{
-            setMedicos(allData);
+        else {
+            getMedicos().then((rpta)=>{
+                setMedicos(rpta);
+            })
         }
-        
+
     }
-
     return (
-
         <>
             <div className="container">
                 <Especialidades
                     key={dataEspecialidades.id}
                     esp={dataEspecialidades}
                     setEspecialidad={setEspecialidad}
-                    especialidad = {especialidad}>
+                    especialidad={especialidad}>
                 </Especialidades>
+                <Distritos
+                    key={dataDistritos.id}
+                    dataDistritos={dataDistritos}
+                    setDistrito={setDistrito}
+                    distrito={distrito}>
+                </Distritos>
                 <div className="row justify-content-center py-4">
                     {medicos.map((medico) => {
-                        let indexEsp = dataEspecialidades.find(esp => esp.id === medico.especialidad);
+                        //let indexEsp = dataEspecialidades.find(esp => esp.id === medico.especialidad);
+                        //let indexEsp = 1;
                         return (
                             <CardMedico
                                 key={medico.id}
                                 medico={medico}
-                                esp={indexEsp} />
+                                esp={dataEspecialidades} 
+                                distritos = {dataDistritos}
+                                />
                         )
                     })}
                 </div>

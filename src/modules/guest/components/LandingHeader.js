@@ -13,10 +13,11 @@ const LandingHeader = () => {
                         <div className="nav col-sm-12 col-md-9">
                             <ul>
                                 <li><Link to={"/medicos"} className="link"> MEDICOS </Link> </li>
-                                <li><Link to={"#nosotros"} className="link"> NOSOTROS </Link> </li>
-                                <li><Link to={"#servicios"} className="link"> SERVICIOS </Link></li>
-                                <li><Link to={"#portafolio"} className="link"> PORTAFOLIO </Link></li>
-                                <li><Link to={"#contactanos"} className="link"> CONTACT US </Link></li>
+                                <li><Link to={"nosotros"} className="link"> NOSOTROS </Link> </li>
+                                <li><Link to={"servicios"} className="link"> SERVICIOS </Link></li>
+                                <li><Link to={"portafolio"} className="link"> PORTAFOLIO </Link></li>
+                                <li><Link to={"contactanos"} className="link"> CONTACT US </Link></li>
+                                <li><Link to={"./auth"} className="link"> LOGIN </Link></li>
                             </ul>
                         </div>
                     </div>

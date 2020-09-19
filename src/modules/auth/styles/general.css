@@ -1,0 +1,26 @@
+.bg-login{
+  background: -webkit-linear-gradient(0deg, #1984ff 0%, #00fbff 100%);
+}
+
+.maxheight{
+  height: 100vh;
+}
+
+.logo-login{
+  width: 130px !important;
+  display: block;
+  margin: 20px auto 10px;
+}
+
+.footer-login{
+  color: white;
+  font-size: 0.7rem;
+}
+
+.bg-footer-login{
+  background-color: #143b63;
+}
+
+.span-form{
+  font-size: 0.8rem;
+}

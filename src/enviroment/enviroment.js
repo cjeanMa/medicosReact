@@ -1,0 +1,1 @@
+export const URL_MOCKAPI = "https://5f65661cfb1b5700169c9b4f.mockapi.io";

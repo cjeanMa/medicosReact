@@ -7,7 +7,7 @@ const LandingAbout = () => {
         <div className="row about">
             <div className="col-md-2 col-sm-0"></div>
             <div className="description col-sm-12 col-md-4">
-                <h3 className="title">CERCA DE TI</h3>
+                <h3 className="title">NOS PREOCUPAMOS POR TU SALUD</h3>
                 <ul className="nav mini-menu" id="myTab" role="tablist">
                     <li className="nav-item">
                         <a className="nav-link link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
