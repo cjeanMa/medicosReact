@@ -17,3 +17,10 @@ export const postMedico = async (medico) => {
     const json = await response.json();
     return json;
   };
+
+  export const getMedico = async(id) =>{
+    
+    const response = await fetch(`${URL_MOCKAPI}/medicos?id=${id}`);
+    const json = await response.json();
+    return json;
+  }

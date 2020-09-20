@@ -5,6 +5,8 @@ import { getEspecialidades } from '../../../services/Especialidades';
 import { getMedicos } from '../../../services/Medicos';
 import { getDistritos } from '../../../services/Distritos';
 import Distritos from './Distritos';
+import { Link } from 'react-router-dom';
+import "../components/css/card.css"
 
 const Medicos = () => {
 

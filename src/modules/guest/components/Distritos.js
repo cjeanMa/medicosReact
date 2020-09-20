@@ -17,7 +17,7 @@ const Distritos = (props) => {
     return (
         <div className="row">
         <div className="col-12 alert alert-secondary">
-            <p>En que zona estas interesado:</p>
+            <p>En que distrito lo buscas:</p>
             {props.dataDistritos.map((distrito) => {
                 return (
                     <button className="btn btn-sm btn-primary mr-3" value={distrito} onClick={(() => { updateFiltroDistrito(distrito.id) })}>

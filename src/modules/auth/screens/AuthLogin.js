@@ -28,7 +28,7 @@ const AuthLogin = () => {
         //e.preventDefault();
         if (form.usuario == "medico" && form.password == "medico") {
             //<Redirect to={'/admin/dashboard'}/>
-            window.location.href = "/admin";
+            window.location.href = "/admin";    
         }
         else {
             msgLogeo.className = "alert alert-danger span-form text-danger";
