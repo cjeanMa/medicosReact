@@ -1,0 +1,28 @@
+
+.img_opinion{
+    display: block;
+    margin: auto;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 90%;
+    max-height: 90%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    box-shadow: 10px 5px 1px lightgray,
+                -10px -5px 1px lightblue;
+    
+    }
+
+.name_opinion{
+    margin: 15px 0px;
+    text-align: center;
+}
+
+.description_opinion{
+    margin: auto;
+    width: 80%;
+    margin-bottom: 25px;
+    text-align: center;
+}
+

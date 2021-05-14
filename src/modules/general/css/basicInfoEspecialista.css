@@ -1,0 +1,28 @@
+.card_basic_info{
+    padding: 15px;
+}
+
+.img_basic_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.img_basic_info img{
+    width: 100%;
+    max-width: 200px;
+    border-radius: 5px;
+}
+
+.content_basic_info{
+
+}
+
+.name_basic_info{
+    font-size: 1.2rem;
+}
+
+
+
+

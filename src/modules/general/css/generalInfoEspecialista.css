@@ -1,0 +1,14 @@
+.card_general_info{
+    padding: 10px;
+}
+
+.item_general_info span{
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: darkblue;
+}
+
+.item_general_info{
+    color: gray;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,42 @@
+.card_opiniones{
+    padding: 15px;
+}   
+
+.card_opinion_paciente{
+    padding: 15px;
+}
+.separador{
+    display: block;
+    border-bottom: 1px solid lightgray;
+    width: 100%;
+}
+
+.avatar_paciente{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 15px;
+}
+
+.fondo_avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.nombre_paciente{
+    margin: 0px;
+}
+
+.fecha_opinion{
+    margin: 0px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.body_opinion{
+    font-size: 0.9rem;
+}

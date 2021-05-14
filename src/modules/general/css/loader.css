@@ -1,0 +1,17 @@
+.loader{
+    text-align: center;
+    animation: carga 1s infinite alternate;
+}
+
+.content_loader{
+    font-size: 2rem;
+}
+
+@keyframes carga{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

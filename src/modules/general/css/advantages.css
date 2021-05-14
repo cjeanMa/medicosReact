@@ -1,0 +1,21 @@
+.item_advantage{
+    display:flex;
+    flex-flow: nowrap;
+    justify-content: flex-start;
+    align-self: center;
+    margin-top: 20px;
+
+}
+
+.item_advantage_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icon_item{
+    font-size: 2rem;
+    color: #0882f5;
+}
+

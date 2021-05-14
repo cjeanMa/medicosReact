@@ -1,0 +1,61 @@
+.card_especialista{
+    position: relative;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 5px;
+    box-shadow: 2px 2px 5px lightgray;
+}
+
+.img_especialista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_especialista img{
+    width: 100%;
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.info_especialista{
+    height: 100px;
+    text-align: center;
+    line-height: 15px;
+}
+
+.nombre_especialista{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.esp_especialista{
+    font-size: 0.8rem;
+}
+
+.distrito_especialista{
+    font-size: 0.8rem;
+}
+
+.disponibilidad_especialista{
+    font-size: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+    margin: -20px;
+}
+
+.disponibilidad_especialista p{
+    border-bottom: 1px solid lightgray;
+}
+
+.favorite{
+    color: gray;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.favorite .active{
+    color: indianred;
+}
